@@ -1,0 +1,86 @@
+:root {
+  --body: black;
+  --text: white;
+}
+
+html {
+  color: var(--text);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--body);
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+header {
+  color: var(--text);
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+main {
+  margin-top: 20px;
+}
+
+table,
+tr,
+td {
+  border: 2px solid white;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  color: var(--text);
+  font-size: 50px;
+}
+
+.players {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+
+.player1,
+.player2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#player1-mark,
+#player2-mark {
+  font-size: 30px;
+}
+
+span {
+  font-size: 25px;
+  color: var(--text);
+}
+
+footer {
+  color: var(--text);
+  font-weight: 300;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
