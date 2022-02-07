@@ -5,26 +5,66 @@ const player2Mark = document.getElementById("player2-mark");
 
 const gameModule = (() => {
   let gameBoard = ["X", "O", "X", "O", "X", "O", "X", "O", "X"];
+  let gameOver = false;
   const tableItems = document.querySelectorAll("td");
   let i = 0;
   tableItems.forEach((tableItem) => {
     tableItem.addEventListener("click", () => {
-      if (i < 9 && tableItem.textContent == "") {
-        tableItem.textContent = gameModule.gameBoard[i];
+      if (i < 9 && tableItem.textContent == "" && gameOver != true) {
+        tableItem.textContent = gameBoard[i];
         i++;
+      }
+      if (
+        i > 4 &&
+        ((gameModule.tableItems[0].textContent != "" &&
+          gameModule.tableItems[0].textContent ==
+            gameModule.tableItems[1].textContent &&
+          gameModule.tableItems[1].textContent ==
+            gameModule.tableItems[2].textContent) ||
+          (gameModule.tableItems[3].textContent != "" &&
+            gameModule.tableItems[3].textContent ==
+              gameModule.tableItems[4].textContent &&
+            gameModule.tableItems[4].textContent ==
+              gameModule.tableItems[5].textContent) ||
+          (gameModule.tableItems[6].textContent != "" &&
+            gameModule.tableItems[6].textContent ==
+              gameModule.tableItems[7].textContent &&
+            gameModule.tableItems[7].textContent ==
+              gameModule.tableItems[8].textContent) ||
+          (gameModule.tableItems[0].textContent != "" &&
+            gameModule.tableItems[0].textContent ==
+              gameModule.tableItems[3].textContent &&
+            gameModule.tableItems[3].textContent ==
+              gameModule.tableItems[6].textContent) ||
+          (gameModule.tableItems[1].textContent != "" &&
+            gameModule.tableItems[1].textContent ==
+              gameModule.tableItems[4].textContent &&
+            gameModule.tableItems[4].textContent ==
+              gameModule.tableItems[7].textContent) ||
+          (gameModule.tableItems[2].textContent != "" &&
+            gameModule.tableItems[2].textContent ==
+              gameModule.tableItems[5].textContent &&
+            gameModule.tableItems[5].textContent ==
+              gameModule.tableItems[8].textContent) ||
+          (gameModule.tableItems[0].textContent != "" &&
+            gameModule.tableItems[0].textContent ==
+              gameModule.tableItems[4].textContent &&
+            gameModule.tableItems[4].textContent ==
+              gameModule.tableItems[8].textContent) ||
+          (gameModule.tableItems[2].textContent != "" &&
+            gameModule.tableItems[2].textContent ==
+              gameModule.tableItems[4].textContent &&
+            gameModule.tableItems[4].textContent ==
+              gameModule.tableItems[8].textContent))
+      ) {
+        gameOver = true;
+        console.log("fama 3 in a row");
       }
     });
   });
-  return { gameBoard };
+  return { tableItems, gameOver };
 })();
 
 const Player = (name, mark) => {
   return { name, mark };
 };
-
-const player1 = Player("MahaEddine", "X");
-player1Mark.textContent = player1.mark;
-const player2 = Player("Moha", "O");
-player2Mark.textContent = player2.mark;
-
-const gameFlow = () => {};
