@@ -30,7 +30,32 @@ header {
 }
 
 main {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.main-container {
+  display: flex;
+  gap: 30px;
+  margin-right: 120px;
+}
+
+button {
+  padding: 25px;
+  font: "Lato";
+  background-color: var(--body);
+  color: var(--text);
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 table,
@@ -39,8 +64,17 @@ td {
   border: 2px solid white;
 }
 
-table {
-  margin: 0 auto;
+.game-table {
+  text-align: center;
+}
+
+input {
+  margin: 0;
+  margin-top: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--body);
+  color: var(--text);
 }
 
 td {
@@ -56,7 +90,7 @@ td {
   margin: 10px;
   display: flex;
   justify-content: center;
-  gap: 200px;
+  gap: 120px;
 }
 
 .player1,
@@ -64,6 +98,12 @@ td {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.name1,
+.name2 {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #player1-mark,
@@ -84,4 +124,55 @@ footer {
   width: 100%;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  position: relative;
+  background-color: white;
+  color: var(--body);
+  width: 40%;
+  height: 50%;
+  padding: 30px;
+  margin: 30px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal input {
+  font-size: 20px;
+  width: 50%;
+  padding: 15px;
+}
+
+.exit-btn {
+  position: absolute;
+  color: black;
+  top: 0px;
+  right: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }

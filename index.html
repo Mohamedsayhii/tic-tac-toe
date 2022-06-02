@@ -16,37 +16,56 @@
   </head>
   <body>
     <header class="header-container">
-      <h1>Tic Tac Tor Bitch</h1>
+      <h1>Tic Tac Toe</h1>
     </header>
-    <main class="main-container">
-      <table class="game-table">
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
+    <main>
+      <div class="main-container">
+        <div class="buttons">
+          <button class="modal-btn">Start</button>
+          <button class="reset-btn">Reset</button>
+        </div>
+        <table class="game-table">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
       <div class="players">
         <div class="player1">
           <span>Player 1</span>
-          <p id="player1-mark"></p>
+          <p class="name1"></p>
         </div>
         <div class="player2">
           <span>Player 2</span>
-          <p id="player2-mark"></p>
+          <p class="name2"></p>
         </div>
       </div>
+      <div class="winner"></div>
     </main>
     <footer class="footer-container">Realized by MohamedSayhii</footer>
+
+    <div class="modal-bg">
+      <div class="modal">
+        <h2>Enter the players</h2>
+        <label for="player1name">First player name</label>
+        <input type="text" name="player1name" id="player1-name" />
+        <label for="player2name">Second player name</label>
+        <input type="text" name="player2name" id="player2-name" />
+        <button class="start-btn">Start the game</button>
+        <span class="exit-btn">X</span>
+      </div>
+    </div>
   </body>
 </html>
